@@ -8,7 +8,7 @@
 #if !__has_feature(objc_arc)
 #error SVProgressHUD is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
-
+#import "FLAnimatedImage.h"
 #import "SVProgressHUD.h"
 #import "SVIndefiniteAnimatedView.h"
 #import "SVRadialGradientLayer.h"
@@ -36,7 +36,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 @property (nonatomic, strong) UIView *hudView;
 
 @property (nonatomic, strong) UILabel *stringLabel;
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) FLAnimatedImageView *imageView;
 @property (nonatomic, strong) UIView *indefiniteAnimatedView;
 @property (nonatomic, strong) CALayer *backgroundLayer;
 
@@ -245,7 +245,14 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
     [self showErrorWithStatus:status];
     [self setDefaultMaskType:existingMaskType];
 }
++ (void)showGIFImage:(NSString*)imageName status:(NSString*)status{
+    NSURL* url = [[NSBundle mainBundle] URLForResource:imageName withExtension:nil];
+    NSData* data = [NSData dataWithContentsOfURL:url];
+    FLAnimatedImage *animatedImage1 = [FLAnimatedImage animatedImageWithGIFData:data];
+    NSTimeInterval displayInterval = NSTimeIntervalSince1970;//[[self sharedView] displayDurationForString:status];
+    [[self sharedView] showImage:(UIImage*)animatedImage1 status:status duration:displayInterval];
 
+}
 + (void)showImage:(UIImage*)image status:(NSString*)status{
     NSTimeInterval displayInterval = [[self sharedView] displayDurationForString:status];
     [[self sharedView] showImage:image status:status duration:displayInterval];
@@ -308,7 +315,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
         _defaultMaskType = SVProgressHUDMaskTypeNone;
         _defaultStyle = SVProgressHUDStyleLight;
         _defaultAnimationType = SVProgressHUDAnimationTypeFlat;
-
+        
         // add accessibility support
         self.accessibilityIdentifier = @"SVProgressHUD";
         self.accessibilityLabel = @"SVProgressHUD";
@@ -327,7 +334,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
         UIImage* infoImage = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:@"info" ofType:@"png"]];
         UIImage* successImage = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:@"success" ofType:@"png"]];
         UIImage* errorImage = [UIImage imageWithContentsOfFile:[imageBundle pathForResource:@"error" ofType:@"png"]];
-
+        
         if ([[UIImage class] instancesRespondToSelector:@selector(imageWithRenderingMode:)]) {
             _infoImage = [infoImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             _successImage = [successImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -337,7 +344,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
             _successImage = successImage;
             _errorImage = errorImage;
         }
-
+        
         _ringThickness = 2;
         _cornerRadius = 14;
         
@@ -345,7 +352,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
         
         _isInitializing = NO;
     }
-	
+    
     return self;
 }
 
@@ -382,7 +389,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
             }
             stringRect = CGRectMake(0.0f, 0.0f, stringSize.width, stringSize.height);
         }
-
+        
         CGFloat stringWidth = stringRect.size.width;
         CGFloat stringHeight = ceilf(CGRectGetHeight(stringRect));
         
@@ -412,15 +419,15 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
     } else{
        	self.imageView.center = CGPointMake(CGRectGetWidth(self.hudView.bounds)/2, CGRectGetHeight(self.hudView.bounds)/2);
     }
-
-	self.stringLabel.hidden = NO;
-	self.stringLabel.frame = labelRect;
+    
+    self.stringLabel.hidden = NO;
+    self.stringLabel.frame = labelRect;
     
     // Animate value update
     [CATransaction begin];
     [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
     
-	if(string) {
+    if(string) {
         if(self.defaultAnimationType == SVProgressHUDAnimationTypeFlat) {
             SVIndefiniteAnimatedView *indefiniteAnimationView = (SVIndefiniteAnimatedView *)self.indefiniteAnimatedView;
             indefiniteAnimationView.radius = SVProgressHUDRingRadius;
@@ -433,7 +440,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
         if(self.progress != SVProgressHUDUndefinedProgress){
             self.backgroundRingLayer.position = self.ringLayer.position = CGPointMake((CGRectGetWidth(self.hudView.bounds)/2), 36.0f);
         }
-	} else {
+    } else {
         if(self.defaultAnimationType == SVProgressHUDAnimationTypeFlat) {
             SVIndefiniteAnimatedView *indefiniteAnimationView = (SVIndefiniteAnimatedView *)self.indefiniteAnimatedView;
             indefiniteAnimationView.radius = SVProgressHUDRingNoTextRadius;
@@ -659,7 +666,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
     
     CGFloat posX = CGRectGetWidth(orientationFrame)/2.0f;
     CGFloat posY = floorf(activeHeight*0.45f);
-
+    
     CGPoint newCenter;
     CGFloat rotateAngle;
     
@@ -854,16 +861,23 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
         [self.class show];
     }
     
-    UIColor *tintColor = self.foregroundColorForStyle;
-    if([self.imageView respondsToSelector:@selector(setTintColor:)]){
-        if (image.renderingMode != UIImageRenderingModeAlwaysTemplate) {
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    if ([image isKindOfClass:[FLAnimatedImage class]]) {
+        self.imageView.animatedImage = (FLAnimatedImage*)image;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.imageView.frame = CGRectMake(0, 0, image.size.width *0.8, image.size.height *0.8);
+    }else{
+        UIColor *tintColor = self.foregroundColorForStyle;
+        if([self.imageView respondsToSelector:@selector(setTintColor:)]){
+            if (image.renderingMode != UIImageRenderingModeAlwaysTemplate) {
+                image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            }
+            self.imageView.tintColor = tintColor;
+        } else{
+            image = [self image:image withTintColor:tintColor];
         }
-        self.imageView.tintColor = tintColor;
-    } else{
-        image = [self image:image withTintColor:tintColor];
+        self.imageView.image = image;
+        
     }
-    self.imageView.image = image;
     self.imageView.hidden = NO;
     
     self.stringLabel.text = string;
@@ -1143,7 +1157,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 
 - (UIImageView*)imageView{
     if(!_imageView){
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 28.0f, 28.0f)];
+        _imageView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 28.0f, 28.0f)];
     }
     if(!_imageView.superview){
         [self.hudView addSubview:_imageView];

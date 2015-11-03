@@ -85,7 +85,9 @@ static float progress = 0.0f;
 }
 
 - (void)showSuccessWithStatus {
-	[SVProgressHUD showSuccessWithStatus:@"Great Success!"];
+    [SVProgressHUD showGIFImage:@"BrowserPreview_tmp.gif" status:@""];
+//    [SVProgressHUD showImage:[UIImage imageNamed:@"success"] status:@"loading"];
+//	[SVProgressHUD showSuccessWithStatus:@"Great Success!"];
 }
 
 - (void)showErrorWithStatus {

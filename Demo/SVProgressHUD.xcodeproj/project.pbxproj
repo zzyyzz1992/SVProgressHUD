@@ -22,6 +22,13 @@
 		28D7ACF80DDB3853001CB0EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ViewController.m */; };
 		3CD078EA1A3B809500290D80 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD078E91A3B809500290D80 /* SVRadialGradientLayer.m */; };
 		3FF0384716633A330070E901 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF0384616633A330070E901 /* QuartzCore.framework */; };
+		5A4C51071BE8A08B00B7826D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C51061BE8A08B00B7826D /* Media.xcassets */; };
+		5A4C51091BE8A09D00B7826D /* success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C51081BE8A09D00B7826D /* success@3x.png */; };
+		5A4C51211BE8A9BB00B7826D /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C511E1BE8A9BB00B7826D /* FLAnimatedImage.m */; };
+		5A4C51221BE8A9BB00B7826D /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C51201BE8A9BB00B7826D /* FLAnimatedImageView.m */; };
+		5A4C51241BE8B03000B7826D /* BrowserPreview_tmp.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C51231BE8B03000B7826D /* BrowserPreview_tmp.gif */; };
+		5A4C51261BE8B43000B7826D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4C51251BE8B43000B7826D /* ImageIO.framework */; };
+		5A4C51281BE8B43800B7826D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4C51271BE8B43800B7826D /* MobileCoreServices.framework */; };
 		63ADC4BC1364C1360060E45B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ADC4BA1364C1360060E45B /* SVProgressHUD.m */; };
 		B07118291A3264C900C8A614 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B07118281A3264C900C8A614 /* SVIndefiniteAnimatedView.m */; };
 /* End PBXBuildFile section */
@@ -47,6 +54,15 @@
 		3CD078E81A3B809500290D80 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		3CD078E91A3B809500290D80 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		3FF0384616633A330070E901 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5A4C51061BE8A08B00B7826D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		5A4C51081BE8A09D00B7826D /* success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "success@3x.png"; sourceTree = "<group>"; };
+		5A4C511D1BE8A9BB00B7826D /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		5A4C511E1BE8A9BB00B7826D /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		5A4C511F1BE8A9BB00B7826D /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		5A4C51201BE8A9BB00B7826D /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		5A4C51231BE8B03000B7826D /* BrowserPreview_tmp.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BrowserPreview_tmp.gif; sourceTree = "<group>"; };
+		5A4C51251BE8B43000B7826D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		5A4C51271BE8B43800B7826D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		63ADC4B91364C1360060E45B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		63ADC4BA1364C1360060E45B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SVProgressHUD-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SVProgressHUD-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -59,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4C51281BE8B43800B7826D /* MobileCoreServices.framework in Frameworks */,
+				5A4C51261BE8B43000B7826D /* ImageIO.framework in Frameworks */,
 				3FF0384716633A330070E901 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -105,13 +123,17 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5A4C51231BE8B03000B7826D /* BrowserPreview_tmp.gif */,
 				22A748951630AD6A004893A8 /* Default-568h@2x.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				22EBCD18134128130074B281 /* MainWindow-iPad.xib */,
 				8D1107310486CEB800E47090 /* SVProgressHUD-Info.plist */,
 				32CA4F630368D1EE00C91783 /* SVProgressHUD_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				5A4C511C1BE8A9BB00B7826D /* FLAnimatedImage */,
 				63ADC4B81364C1360060E45B /* SVProgressHUD */,
+				5A4C51061BE8A08B00B7826D /* Media.xcassets */,
+				5A4C51081BE8A09D00B7826D /* success@3x.png */,
 			);
 			name = "Other Sources";
 			path = ..;
@@ -120,12 +142,25 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A4C51271BE8B43800B7826D /* MobileCoreServices.framework */,
+				5A4C51251BE8B43000B7826D /* ImageIO.framework */,
 				3FF0384616633A330070E901 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A4C511C1BE8A9BB00B7826D /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C511D1BE8A9BB00B7826D /* FLAnimatedImage.h */,
+				5A4C511E1BE8A9BB00B7826D /* FLAnimatedImage.m */,
+				5A4C511F1BE8A9BB00B7826D /* FLAnimatedImageView.h */,
+				5A4C51201BE8A9BB00B7826D /* FLAnimatedImageView.m */,
+			);
+			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
 		63ADC4B81364C1360060E45B /* SVProgressHUD */ = {
@@ -197,9 +232,12 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* ViewController.xib in Resources */,
+				5A4C51241BE8B03000B7826D /* BrowserPreview_tmp.gif in Resources */,
+				5A4C51071BE8A08B00B7826D /* Media.xcassets in Resources */,
 				22EBCD19134128130074B281 /* MainWindow-iPad.xib in Resources */,
 				22D13AB71365FEAC0025FCC9 /* SVProgressHUD.bundle in Resources */,
 				2265DEEE14706A8900B3EBF7 /* README.md in Resources */,
+				5A4C51091BE8A09D00B7826D /* success@3x.png in Resources */,
 				22A748961630AD6A004893A8 /* Default-568h@2x.png in Resources */,
 				22B9D43816B92E4D00E71652 /* SVProgressHUD.podspec in Resources */,
 			);
@@ -213,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B07118291A3264C900C8A614 /* SVIndefiniteAnimatedView.m in Sources */,
+				5A4C51211BE8A9BB00B7826D /* FLAnimatedImage.m in Sources */,
 				3CD078EA1A3B809500290D80 /* SVRadialGradientLayer.m in Sources */,
+				5A4C51221BE8A9BB00B7826D /* FLAnimatedImageView.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ViewController.m in Sources */,

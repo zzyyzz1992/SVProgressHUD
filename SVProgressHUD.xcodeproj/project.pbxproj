@@ -16,6 +16,10 @@
 		4A9D7DF31AB345E10039B273 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F0220415C857EF0030BBEF /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A9D7DF41AB345E80039B273 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A9D7DCE1AB345540039B273 /* SVIndefiniteAnimatedView.h */; };
 		4A9D7DF71AB34A620039B273 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65F0220D15C858060030BBEF /* SVProgressHUD.bundle */; };
+		5A4C51021BE89F0900B7826D /* FLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A4C50FE1BE89F0900B7826D /* FLAnimatedImage.h */; };
+		5A4C51031BE89F0900B7826D /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C50FF1BE89F0900B7826D /* FLAnimatedImage.m */; };
+		5A4C51041BE89F0900B7826D /* FLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A4C51001BE89F0900B7826D /* FLAnimatedImageView.h */; };
+		5A4C51051BE89F0900B7826D /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C51011BE89F0900B7826D /* FLAnimatedImageView.m */; };
 		65F0220015C857EF0030BBEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F021FF15C857EF0030BBEF /* Foundation.framework */; };
 		65F0220515C857EF0030BBEF /* SVProgressHUD.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65F0220415C857EF0030BBEF /* SVProgressHUD.h */; };
 		65F0220715C857EF0030BBEF /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F0220615C857EF0030BBEF /* SVProgressHUD.m */; };
@@ -41,6 +45,10 @@
 		4A9D7DCF1AB345540039B273 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		4A9D7DD81AB345980039B273 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9D7DDB1AB345990039B273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A4C50FE1BE89F0900B7826D /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		5A4C50FF1BE89F0900B7826D /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		5A4C51001BE89F0900B7826D /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		5A4C51011BE89F0900B7826D /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
 		65F021FC15C857EF0030BBEF /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F021FF15C857EF0030BBEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		65F0220315C857EF0030BBEF /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
@@ -84,6 +92,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5A4C50FD1BE89F0900B7826D /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C50FE1BE89F0900B7826D /* FLAnimatedImage.h */,
+				5A4C50FF1BE89F0900B7826D /* FLAnimatedImage.m */,
+				5A4C51001BE89F0900B7826D /* FLAnimatedImageView.h */,
+				5A4C51011BE89F0900B7826D /* FLAnimatedImageView.m */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
 		65F021F115C857EF0030BBEF = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +139,7 @@
 				65F0220615C857EF0030BBEF /* SVProgressHUD.m */,
 				4A9D7DCE1AB345540039B273 /* SVIndefiniteAnimatedView.h */,
 				4A9D7DCF1AB345540039B273 /* SVIndefiniteAnimatedView.m */,
+				5A4C50FD1BE89F0900B7826D /* FLAnimatedImage */,
 				65F0220D15C858060030BBEF /* SVProgressHUD.bundle */,
 				65F0220215C857EF0030BBEF /* Supporting Files */,
 			);
@@ -143,7 +163,9 @@
 			files = (
 				4A9D7DF31AB345E10039B273 /* SVProgressHUD.h in Headers */,
 				4A9D7DF41AB345E80039B273 /* SVIndefiniteAnimatedView.h in Headers */,
+				5A4C51041BE89F0900B7826D /* FLAnimatedImageView.h in Headers */,
 				3CB14F9C1AFBCB57003C2641 /* SVRadialGradientLayer.h in Headers */,
+				5A4C51021BE89F0900B7826D /* FLAnimatedImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4C51031BE89F0900B7826D /* FLAnimatedImage.m in Sources */,
 				4A9D7DF11AB345DD0039B273 /* SVProgressHUD.m in Sources */,
+				5A4C51051BE89F0900B7826D /* FLAnimatedImageView.m in Sources */,
 				3CB14F9E1AFBCB57003C2641 /* SVRadialGradientLayer.m in Sources */,
 				4A9D7DF21AB345DD0039B273 /* SVIndefiniteAnimatedView.m in Sources */,
 			);
